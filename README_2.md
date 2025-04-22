@@ -1,5 +1,5 @@
 
-t it! Let's create a **Docker + Python + Watchtower** CI/CD pipeline that automatically deploys your Python app whenever you push changes to GitHub. This setup uses:
+Let's create a **Docker + Python + Watchtower** CI/CD pipeline that automatically deploys your Python app whenever you push changes to GitHub. This setup uses:
 
 1. **Python Flask** for the server
 2. **Docker** for containerization
