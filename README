@@ -53,12 +53,25 @@ CMD ["python", "app.py"]
 
 2. **Create `docker-compose.yml`** (for local testing):
 ```yaml
-version: '3'
+version: '3.8'
+
 services:
   app:
     build: .
+    image: hraza25/pyserver:latest  # <-- Important for Docker Hub
+    container_name: python-app
     ports:
       - "5000:5000"
+    restart: always
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=30  # Check for updates every 30 seconds
+    restart: always
 ```
 
 ---
